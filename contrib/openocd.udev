@@ -1,0 +1,71 @@
+ACTION!="add|change", GOTO="openocd_rules_end"
+SUBSYSTEM!="usb", GOTO="openocd_rules_end"
+ENV{DEVTYPE}!="usb_device", GOTO="openocd_rules_end"
+
+# Olimex ARM-USB-OCD
+ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="0003", MODE="664", GROUP="plugdev"
+
+# Olimex ARM-USB-OCD-TINY
+ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="0004", MODE="664", GROUP="plugdev"
+
+# Olimex ARM-JTAG-EW
+ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="001e", MODE="664", GROUP="plugdev"
+
+# Olimex ARM-USB-OCD-TINY-H
+ATTRS{idVendor}=="15ba", ATTRS{idProduct}=="002a", MODE="664", GROUP="plugdev"
+
+# USBprog with OpenOCD firmware
+ATTRS{idVendor}=="1781", ATTRS{idProduct}=="0c63", MODE="664", GROUP="plugdev"
+
+# Amontec JTAGkey and JTAGkey-tiny
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="cff8", MODE="664", GROUP="plugdev"
+
+# Amontec JTAGkey-HiSpeed
+ATTRS{idVendor}=="0fbb", ATTRS{idProduct}=="1000", MODE="664", GROUP="plugdev"
+
+# Axiom AXM-0432 Link (Symphony SoundBite?)
+# Calao Systems USB-A9260-C01
+# TinCanTools Flyswatter
+# OOCD-Link
+# Marvell Sheevaplug (early development versions)
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", MODE="664", GROUP="plugdev"
+
+# Calao Systems USB-A9260-C02
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", MODE="664", GROUP="plugdev"
+
+# IAR J-Link USB
+ATTRS{idVendor}=="1366", ATTRS{idProduct}=="0101", MODE="664", GROUP="plugdev"
+
+# Raisonance RLink
+ATTRS{idVendor}=="138e", ATTRS{idProduct}=="9000", MODE="664", GROUP="plugdev"
+
+# Hitex STR9-comStick
+ATTRS{idVendor}=="0640", ATTRS{idProduct}=="002c", MODE="664", GROUP="plugdev"
+
+# Hitex STM32-PerformanceStick
+ATTRS{idVendor}=="0640", ATTRS{idProduct}=="002d", MODE="664", GROUP="plugdev"
+
+# TI/Luminary Stellaris Evaluation Board (several)
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="bcd9", MODE="664", GROUP="plugdev"
+
+# TI/Luminary Stellaris In-Circuit Debug Interface (ICDI) Board
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="bcda", MODE="664", GROUP="plugdev"
+
+# Xverve Signalyzer Tool (DT-USB-ST)
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="bca0", MODE="664", GROUP="plugdev"
+
+# egnite Turtelizer 2
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="bdc8", MODE="664", GROUP="plugdev"
+
+# Marvell Sheevaplug
+ATTRS{idVendor}=="9e88", ATTRS{idProduct}=="9e8f", MODE="664", GROUP="plugdev"
+
+# Section5 ICEbear
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="c140", MODE="664", GROUP="plugdev"
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="c141", MODE="664", GROUP="plugdev"
+
+# Hilscher NXHX Boards
+ATTRS{idVendor}=="0640", ATTRS{idProduct}=="0028", MODE="664", GROUP="plugdev"
+
+LABEL="openocd_rules_end"
+
