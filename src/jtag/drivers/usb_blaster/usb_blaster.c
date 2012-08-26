@@ -819,6 +819,18 @@ static int ublast_quit(void)
 	return info.drv->close(info.drv);
 }
 
+static int dummy_khz(int khz, int *jtag_speed)
+{
+	*jtag_speed =khz;
+	return ERROR_OK;
+}
+
+static int dummy_speed_div(int speed, int *khz)
+{
+	*khz = speed;
+	return ERROR_OK;
+}
+
 COMMAND_HANDLER(ublast_handle_device_desc_command)
 {
 	if (CMD_ARGC == 1)
@@ -929,6 +941,10 @@ struct jtag_interface usb_blaster_interface = {
 	.name = "usb_blaster",
 	.commands = ublast_command_handlers,
 	.supported = DEBUG_CAP_TMS_SEQ,
+	.transports = jtag_only,
+
+	.khz = &dummy_khz,
+	.speed_div = &dummy_speed_div,
 
 	.execute_queue = ublast_execute_queue,
 	.speed = ublast_speed,
