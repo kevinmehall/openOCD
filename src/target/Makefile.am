@@ -177,7 +177,7 @@ noinst_HEADERS = \
 	or1k.h \
 	or1k_jtag.h
 
-nobase_dist_pkglib_DATA =
-nobase_dist_pkglib_DATA += ecos/at91eb40a.elf
+nobase_dist_pkgdata_DATA =
+nobase_dist_pkgdata_DATA += ecos/at91eb40a.elf
 
 MAINTAINERCLEANFILES = $(srcdir)/Makefile.in
